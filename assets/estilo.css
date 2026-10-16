@@ -1,0 +1,112 @@
+@import url("fuentes/fuentes.css");
+@import url("fuentes/manuscrita.css");
+:root{--crema:#fbf7f2;--crema2:#f4ebe1;--tinta:#2a1e1d;--gris:#7c6a64;--frambuesa:#a8324f;--lila:#a892cf;--dorado:#c9a227;--linea:rgba(42,30,29,.14);--serif:'Bodoni Moda',Georgia,serif;--ui:'Inter',system-ui,sans-serif;--mano:'Parisienne',cursive}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--crema);color:var(--tinta);font:16px/1.7 var(--ui);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12}
+h2{font-size:clamp(28px,4.4vw,50px)}
+h3{font-size:clamp(19px,2.2vw,24px)}
+p{color:#4a3b38}
+.etq{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--frambuesa);font-weight:600}
+.mano{font-family:var(--mano);font-size:clamp(38px,6vw,74px);line-height:1;color:var(--tinta)}
+.boton{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border:1px solid var(--tinta);border-radius:100px;font-size:14px;letter-spacing:.03em;text-decoration:none;color:var(--tinta);background:transparent;transition:.25s;cursor:pointer;font-family:var(--ui)}
+.boton:hover{background:var(--tinta);color:var(--crema)}
+.boton.lleno{background:var(--frambuesa);border-color:var(--frambuesa);color:#fff}
+.boton.lleno:hover{background:#8d2740;border-color:#8d2740}
+img{max-width:100%;display:block}
+.entrada{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.entrada.visto{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.entrada{opacity:1;transform:none}}
+/* ---------- cabecera ---------- */
+.cabeza{position:sticky;top:0;z-index:40;background:rgba(251,247,242,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.cabeza .barra{display:flex;align-items:center;justify-content:space-between;gap:20px;height:82px}
+.marca{text-decoration:none;display:flex;align-items:baseline;gap:10px}
+.marca i{font-family:var(--mano);font-style:normal;font-size:34px}
+.marca b{font-family:var(--serif);font-size:13px;letter-spacing:.34em;font-weight:400}
+.enlaces{display:flex;gap:26px}
+.enlaces a{font-size:13.5px;text-decoration:none;letter-spacing:.04em;color:#4a3b38}
+.enlaces a:hover{color:var(--frambuesa)}
+.hamb{display:none;width:44px;height:44px;border:1px solid var(--linea);background:none;border-radius:100px;cursor:pointer;position:relative}
+.hamb span{position:absolute;left:13px;right:13px;height:1.5px;background:var(--tinta)}
+.hamb span:first-child{top:18px}.hamb span:last-child{top:24px}
+.movil{display:none;border-bottom:1px solid var(--linea);background:var(--crema)}
+.movil.abierto{display:block}
+.movil a{display:block;padding:15px 0;border-bottom:1px solid var(--linea);text-decoration:none;font-size:16px}
+/* ---------- portada ---------- */
+.portada{padding:clamp(36px,6vw,84px) 0 clamp(28px,4vw,54px)}
+.portada .rejilla{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,5vw,64px);align-items:center}
+.portada h1{font-size:clamp(36px,6.2vw,72px)}
+.portada .lema{margin:18px 0 24px;font-size:clamp(16px,1.6vw,19px)}
+.cinta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+.cinta span{font-size:12.5px;letter-spacing:.05em;border:1px solid var(--linea);border-radius:100px;padding:7px 14px;color:#5c4a45}
+.foto-marco{position:relative}
+.foto-marco img{border-radius:6px;aspect-ratio:4/5;object-fit:cover;box-shadow:0 30px 60px -30px rgba(42,30,29,.45)}
+.sello{position:absolute;left:-14px;bottom:24px;background:var(--crema);border:1px solid var(--linea);border-radius:100px;padding:10px 18px;font-size:12.5px}
+/* ---------- bloques ---------- */
+section{padding:clamp(52px,7vw,104px) 0}
+.cabecera-sec{max-width:780px;margin-bottom:clamp(28px,4vw,50px)}
+.cabecera-sec p{margin-top:14px}
+.tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px)}
+.tarjeta{background:#fff;border:1px solid var(--linea);border-radius:8px;padding:26px 24px}
+.tarjeta h3{margin-bottom:10px}
+.tarjeta p{font-size:15px}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,26px)}
+.paso{border-top:2px solid var(--tinta);padding-top:18px}
+.paso b{display:block;font-family:var(--serif);font-size:32px;margin-bottom:8px}
+.paso p{font-size:15px}
+@media(max-width:960px){.portada .rejilla{grid-template-columns:1fr}.tarjetas{grid-template-columns:1fr 1fr}.pasos{grid-template-columns:1fr 1fr}.enlaces{display:none}.hamb{display:block}}
+@media(max-width:620px){.tarjetas,.pasos{grid-template-columns:1fr}}
+/* ---------- galeria ---------- */
+.muro{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.muro figure{position:relative;overflow:hidden;border-radius:6px;cursor:zoom-in;background:var(--crema2)}
+.muro img{aspect-ratio:1;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.muro figure:hover img{transform:scale(1.06)}
+.muro figure:nth-child(1),.muro figure:nth-child(6){grid-column:span 2;grid-row:span 2}
+.muro figure:nth-child(1) img,.muro figure:nth-child(6) img{aspect-ratio:auto;height:100%}
+/* ---------- opiniones ---------- */
+.opiniones{background:var(--crema2)}
+.nota-media{display:flex;align-items:baseline;gap:14px;margin-bottom:34px}
+.nota-media b{font-family:var(--serif);font-size:46px;line-height:1}
+.nota-media span{font-size:14px;color:var(--gris)}
+.opiniones .rejilla{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px)}
+.opinion{background:#fff;border:1px solid var(--linea);border-radius:8px;padding:26px 24px;display:flex;flex-direction:column;gap:14px}
+.opinion p{font-size:15px}
+.opinion footer{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris);margin-top:auto}
+.estrellas{color:var(--dorado);letter-spacing:.16em;font-size:13px}
+/* ---------- pasteleria ---------- */
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);align-items:start}
+.lista-h{list-style:none}
+.lista-h li{display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid var(--linea);font-size:15px}
+.lista-h li span:last-child{color:var(--gris);white-space:nowrap}
+.dato-caja{border:1px solid var(--linea);border-radius:8px;padding:24px;background:#fff}
+.dato-caja h3{margin-bottom:12px}
+.dato-caja p{font-size:15px;margin-bottom:10px}
+/* ---------- contacto ---------- */
+.contacto .rejilla{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px)}
+.campo{margin-bottom:14px}
+.campo label{display:block;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);margin-bottom:6px}
+.campo input,.campo select,.campo textarea{width:100%;padding:13px 15px;border:1px solid var(--linea);border-radius:6px;background:#fff;font:15px var(--ui);color:var(--tinta)}
+.campo textarea{min-height:104px;resize:vertical}
+.dos-campos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aviso-form{font-size:13px;color:var(--gris);margin-top:12px}
+/* ---------- pie ---------- */
+.pie{background:var(--tinta);color:#e8ded6;padding:clamp(46px,6vw,80px) 0 30px}
+.pie .rejilla{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(24px,4vw,50px)}
+.pie .mano{color:#fff;font-size:40px}
+.pie h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b5a49b;margin-bottom:14px;font-weight:600}
+.pie ul{list-style:none}
+.pie li{margin-bottom:9px;font-size:14.5px}
+.pie a{text-decoration:none;color:#e8ded6}
+.pie a:hover{color:#fff}
+.legal{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;border-top:1px solid rgba(255,255,255,.14);margin-top:clamp(30px,4vw,50px);padding-top:22px;font-size:12.5px;color:#b5a49b}
+/* ---------- lupa ---------- */
+.lupa{display:none;position:fixed;inset:0;z-index:80;background:rgba(20,14,13,.94);align-items:center;justify-content:center;padding:20px}
+.lupa.abierta{display:flex}
+.lupa img{max-width:min(1100px,94vw);max-height:88vh;border-radius:6px}
+.lupa button{position:absolute;top:18px;right:22px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer;line-height:1}
+@media(max-width:960px){.muro{grid-template-columns:1fr 1fr}.opiniones .rejilla{grid-template-columns:1fr}.dos,.contacto .rejilla{grid-template-columns:1fr}.pie .rejilla{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.dos-campos{grid-template-columns:1fr}.pie .rejilla{grid-template-columns:1fr}}
+@media(max-width:960px){.cabeza .boton{display:none}}
+@media(max-width:620px){.sello{left:10px;bottom:10px}.portada .cinta span{font-size:12px}}
