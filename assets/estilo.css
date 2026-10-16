@@ -42,7 +42,7 @@ img{max-width:100%;display:block}
 .cinta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
 .cinta span{font-size:12.5px;letter-spacing:.05em;border:1px solid var(--linea);border-radius:100px;padding:7px 14px;color:#5c4a45}
 .foto-marco{position:relative}
-.foto-marco img{border-radius:6px;aspect-ratio:4/5;object-fit:cover;box-shadow:0 30px 60px -30px rgba(42,30,29,.45)}
+.foto-marco img{width:100%;height:auto;max-height:min(76vh,700px);object-fit:cover;border-radius:6px;box-shadow:0 30px 60px -30px rgba(42,30,29,.45)}
 .sello{position:absolute;left:-14px;bottom:24px;background:var(--crema);border:1px solid var(--linea);border-radius:100px;padding:10px 18px;font-size:12.5px}
 /* ---------- bloques ---------- */
 section{padding:clamp(52px,7vw,104px) 0}
